@@ -11,6 +11,7 @@
 - 3 colheres de chocolate em pó
 - 1 pacote de bolacha champagne
 - 1 pacote de bolacha negresco
+- Chocolate meio amargo (nunca falha)
 
 ### Preparo :bat:
 

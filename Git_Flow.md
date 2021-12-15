@@ -58,27 +58,31 @@ O gitflow é baseado em algumas ramificação primárias que falaremos sobre cad
 
 A branch master é disparada ao iniciarmos um repositório local git. Dentro da estrutura presente no gitflow ela representa o nosso projeto a nível de consumo, isto é, a branch master constiui as versões estáveis do nosso projeto, prontas para serem usadas pelos clientes.
 
+![Master](https://user-images.githubusercontent.com/71770334/146102193-c5d919db-cfe3-4a18-a09f-a35bb42798cd.png)
+
 ### Branch Develop
 
 Bifurcando da ramificação master, a branch develop serve como uma branch para integração de funcionalidades. Isto é, eu vejo a função develop como antigamente eu via a branch master, quando criava alguma funcionalidade nova para meu projeto, usava uma bifurcação da master. A develop server exatamente para isso. Enquanto a branche master tem as versões estabilizadas do projeto, pronto para lançamento, a develop armazena o histórico do projeto. Dessa forma, quando clonamos um projeto usando gitflow em nossa máquina local, rastreamos a branche develop.
+
+![Develop](https://user-images.githubusercontent.com/71770334/146102328-3c8dc475-834c-405f-93e0-842c45e878ce.png)
 
 ### Branch Feature
 
 A branch feature advém da branch develop e podemos ter infinitas branches feature em nosso projeto usando gitflow. A ideia é, ter uma branch feature para cada funcionalidade que estamos trabalhando. Vendo através de um exemplo de um projeto simples, ao implementarmos uma calculadora, podemos ter uma branch feature para cada operação que nossa calculadora poderá realizar em nível de implementação. A questão é que teremos branches independentes para trabalhar em funcionalidades específicas, que quando implementadas incluímos na branch develop através da operação de merge. Quando criamos uma nova branch feature, bifurcamos a branch develop em seu estado mais recente.
 
-
+![Feature](https://user-images.githubusercontent.com/71770334/146102368-7800df6c-3db5-4de0-a7d8-e34281153cac.png)
 
 ### branch Release
 
 A branch release como a branch feature, é uma bifurcação da branch develop. Tal branch é iniciada quando já se tem o suficiente para um novo lançamento de versão. Ela é dedicada para resolução de questões sobre o lançamento de uma versão, isto é, para questões como documentação, questões de segurança, especificação, etc, salientando-se que nessa branch, não pode ser desenvolvida novas funcionalidades. Possuir tal branch na estrutura do gitflow nos possibilita continuar trabalhando já em novas versões dentro da branch develop, enquanto outros detalhes estão sendo resolvidos para o lançamento da versão atual. Com a versão totalmente pronta, faz-se um merge da branch release para a branhc master, comittando de maneira a especificar a nova versão. Note que deve-se também fazer o merge com a branch develop para integrar os detalhes solucionados.
 
-
+![Release](https://user-images.githubusercontent.com/71770334/146102451-2f75188f-2c1f-4414-a98f-4699c38b5e4d.png)
 
 ### branche hotfix
 
 Branch hotfix é uma bifurcação da master, sua funcionalidade é servir como canal para trabalhar em atualizações a nível de consumo de maneira rápida. Com ela pode-se corrigir pequenas falhas encontradas em uma versão estável do projeto sem ter que atrapalhar o fluxo de trabalho. Assim que concluída a correção, deve ser feito o merge dela quanto na branch master, especificando a nova versão, quanto na branch develop, e se ativa, na branch release.
 
-
+![Hotfix](https://user-images.githubusercontent.com/71770334/146102492-c15e09f5-596c-4610-b769-bd2a18eb0bb1.png)
 
 ## Pequena prática:
 
